@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>KD Kannu Designs</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
 body {
@@ -12,73 +12,43 @@ body {
   font-family: 'Poppins', sans-serif;
   background: #322D29;
   color: #EFE9E1;
-  scroll-behavior: smooth;
 }
 
-nav {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  background: rgba(0,0,0,0.5);
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  padding: 15px;
-}
-
-nav a {
-  color: #EFE9E1;
-  text-decoration: none;
-}
-
+/* HEADER */
 header {
   text-align: center;
-  padding: 120px 20px;
+  padding: 80px 20px;
 }
 
 .logo {
-  width: 160px;
+  width: 130px;
 }
 
-.typing {
-  color: #AC9C8D;
-}
-
-.typing::after {
-  content: "|";
-  animation: blink 1s infinite;
-}
-
-@keyframes blink {
-  50% { opacity: 0; }
-}
-
+/* SECTION */
 section {
-  padding: 80px 20px;
-  max-width: 1100px;
+  padding: 50px 20px;
+  max-width: 900px;
   margin: auto;
 }
 
 .box {
   background: rgba(255,255,255,0.05);
-  padding: 25px;
-  border-radius: 15px;
-}
-
-/* SLIDER */
-.slider-container {
-  position: relative;
-  max-width: 700px;
-  margin: auto;
-  overflow: hidden;
+  padding: 20px;
   border-radius: 12px;
 }
 
-.before-img {
-  width: 100%;
+/* SLIDER */
+.slider {
+  position: relative;
 }
 
-.after-img {
+.img {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+}
+
+.after {
   position: absolute;
   top: 0;
   left: 0;
@@ -86,65 +56,39 @@ section {
   overflow: hidden;
 }
 
-.after-img img {
+input[type="range"] {
   width: 100%;
+  margin-top: 10px;
 }
 
-.slider-line {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 3px;
-  height: 100%;
-  background: white;
-  cursor: ew-resize;
-}
-
-.circle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 20px;
-  height: 20px;
-  background: white;
-  border-radius: 50%;
-}
-
-.label {
-  position: absolute;
-  top: 10px;
-  background: rgba(0,0,0,0.6);
-  padding: 5px 10px;
-}
-
-.before { left: 10px; }
-.after-text { right: 10px; }
-
+/* GALLERY */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap: 15px;
 }
 
 .gallery img {
   width: 100%;
-  border-radius: 12px;
+  border-radius: 10px;
 }
 
+/* VIDEO */
 video {
   width: 100%;
-  border-radius: 12px;
+  border-radius: 10px;
 }
 
+/* BUTTON */
 .btn {
-  padding: 10px 20px;
   background: #72383D;
+  padding: 10px 15px;
   color: white;
   text-decoration: none;
-  border-radius: 8px;
+  border-radius: 6px;
 }
 
+/* FLOAT BUTTONS */
 .whatsapp {
   position: fixed;
   bottom: 20px;
@@ -164,6 +108,7 @@ video {
   color: white;
 }
 
+/* FOOTER */
 footer {
   text-align: center;
   padding: 20px;
@@ -173,130 +118,83 @@ footer {
 
 <body>
 
-<nav>
-  <a href="#about">About</a>
-  <a href="#services">Services</a>
-  <a href="#contact">Contact</a>
-</nav>
-
 <header>
-  <img src="ccc89d65-5369-419a-9a5b-168993e30e60.png" class="logo">
+  <img src="logo.png" class="logo">
   <h1>KD KANNU DESIGNS</h1>
-  <p class="typing" id="typing"></p>
+  <p>UI & Graphic Designer</p>
 </header>
 
-<section id="about">
-  <h2>About</h2>
-  <div class="box">
-    <p>I create modern and luxury UI, logos and digital designs.</p>
-  </div>
-</section>
-
-<section id="services">
-  <h2>Services</h2>
-  <div class="box">
-    <ul>
-      <li>UI Design</li>
-      <li>Poster Design</li>
-      <li>Logo Design</li>
-      <li>Video Editing</li>
-      <li>ATS Resume</li>
-      <li>Certificate Design</li>
-    </ul>
-  </div>
-</section>
-
+<!-- IMAGE EDITING -->
 <section>
-  <h2>Image Editing</h2>
+  <h2>Image Editing (Before / After)</h2>
   <div class="box">
-    <div class="slider-container">
 
-      <img src="WhatsApp Image 2026-03-22 at 4.30.33 PM (1).jpeg" class="before-img">
+    <div class="slider">
+      <img src="before.jpg" class="img">
 
-      <div class="after-img" id="after">
-        <img src="WhatsApp Image 2026-03-22 at 4.30.33 PM.jpeg">
+      <div class="after" id="after">
+        <img src="after.jpg" class="img">
       </div>
 
-      <span class="label before">Before</span>
-      <span class="label after-text">After</span>
-
-      <div class="slider-line" id="sliderLine">
-        <div class="circle"></div>
-      </div>
-
+      <input type="range" min="0" max="100" value="50" id="range">
     </div>
+
   </div>
 </section>
 
+<!-- WORK -->
 <section>
   <h2>My Work</h2>
   <div class="box gallery">
-    <img src="MOCKUP 5.jpg">
+    <img src="mockup.jpg">
   </div>
 </section>
 
+<!-- VIDEO -->
 <section>
-  <h2>Resume</h2>
+  <h2>Prototype Video</h2>
   <div class="box">
-    <a href="jo CV.pdf" class="btn">View Resume</a>
+    <video controls>
+      <source src="ZA.mp4" type="video/mp4">
+    </video>
   </div>
 </section>
 
+<!-- DOCUMENTS -->
 <section>
-  <h2>Certificate</h2>
+  <h2>Documents</h2>
   <div class="box">
-    <a href="certificate for 5 days .pdf" class="btn">View Certificate</a>
+    <a href="resume.pdf" class="btn">View Resume</a><br><br>
+    <a href="certificate.pdf" class="btn">View Certificate</a>
   </div>
 </section>
 
-<section id="contact">
+<!-- CONTACT -->
+<section>
   <h2>Contact</h2>
   <div class="box">
-    <p>📞 Phone: 9566951885</p>
-    <p>📧 Email: kannubusiness@gmail.com</p>
-    <p>📸 Instagram: @kd_kannu_designs</p>
+    <p>📞 9566951885</p>
+    <p>📧 kannubusiness@gmail.com</p>
+    <p>📸 @kd_kannu_designs</p>
   </div>
 </section>
 
 <footer>
-  <p>© 2026 KD Kannu Designs</p>
+  © 2026 KD Kannu Designs
 </footer>
 
-<a href="https://wa.me/919566951885?text=Hi%20I%20saw%20your%20portfolio" target="_blank" class="whatsapp">💬</a>
-<a href="https://ig.me/m/kd_kannu_designs" target="_blank" class="instagram">📸</a>
+<!-- FLOAT BUTTONS -->
+<a href="https://wa.me/919566951885?text=Hi%20I%20saw%20your%20portfolio" class="whatsapp">💬</a>
+
+<a href="https://ig.me/m/kd_kannu_designs" class="instagram">📸</a>
 
 <script>
-// SLIDER
-const slider = document.getElementById("sliderLine");
+const range = document.getElementById("range");
 const after = document.getElementById("after");
 
-let drag = false;
-
-slider.onmousedown = ()=> drag=true;
-window.onmouseup = ()=> drag=false;
-
-window.onmousemove = (e)=>{
-  if(!drag) return;
-  let rect = slider.parentElement.getBoundingClientRect();
-  let x = e.clientX - rect.left;
-  if(x<0) x=0;
-  if(x>rect.width) x=rect.width;
-  let percent = (x/rect.width)*100;
-  slider.style.left = percent+"%";
-  after.style.width = percent+"%";
+range.oninput = () => {
+  after.style.width = range.value + "%";
 };
-
-// TYPING
-const text=["UI Designer","Graphic Designer","Video Editor"];
-let i=0,j=0,del=false;
-function type(){
-  let t=text[i];
-  if(!del){ j++; if(j==t.length) del=true; }
-  else{ j--; if(j==0){ del=false; i=(i+1)%text.length; } }
-  document.getElementById("typing").innerText=t.substring(0,j);
-  setTimeout(type, del?50:100);
-}
-type();
 </script>
 
 </body>
